@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # import depending packages
 import json
 import requests
