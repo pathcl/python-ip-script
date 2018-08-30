@@ -1,11 +1,18 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 # import depending packages
 import json
-import requests
+import sys
+
+try:
+    import requests
+
+except ImportError:
+    print('Please install requests: pip3 install requests')
+    sys.exit(1)
 
 # Ofcourse, no application is complete without Hello, world!
-print 'Hello, world!'
+print('Hello, world!')
 
 # The page which provides our remote IP information
 requestUrl = 'http://ipinfo.io'
@@ -17,7 +24,7 @@ r = requests.get(requestUrl)
 data = json.loads(r.text)
 
 # Print the Remote IP fetched from the page
-print 'Your IP address is: ' + data['ip']
+print('Your IP address is: %s' % data['ip'])
 
 # End
-print 'You succesfully ran this script!'
+print('You succesfully ran this script!')
